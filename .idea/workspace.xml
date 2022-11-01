@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9910deee-f373-4778-8498-a4cc658a413b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9910deee-f373-4778-8498-a4cc658a413b" name="Changes" comment="solved constructor problem">
       <change beforePath="$PROJECT_DIR$/src/LinearEquation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearEquation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinearEquationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearEquationRunner.java" afterDir="false" />
     </list>
@@ -75,5 +74,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="solved constructor problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved constructor problem" />
   </component>
 </project>

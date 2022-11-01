@@ -12,7 +12,7 @@ public class LinearEquationRunner {
         int coord2x = Integer.parseInt(coord2.substring(1, coord2.indexOf(",")));
         int coord2y = Integer.parseInt(coord2.substring(coord2.indexOf(", ")+2,coord2.indexOf(")")));
 
-        LinearEquation equation = new LinearEquation();
+        LinearEquation equation = new LinearEquation(coord1x, coord1y, coord2x, coord2y);
         equation.lineInfo();
     }
 }
