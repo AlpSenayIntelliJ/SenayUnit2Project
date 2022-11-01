@@ -12,13 +12,36 @@ public class LinearEquation {
         double slope = (double) slopen/sloped;
         double yint = y1 - ((slope)*x1);
         double distance = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+        System.out.println();
         System.out.println("The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")");
-        System.out.println("The equation of the line between these points is: y = " + slopen + "/" + sloped
-        + "x + " + yint);
+        if (((int) (slope)) == slope) {
+            if (slope == 1) {
+                System.out.println("The equation of the line between these points is: y = x + " + yint);
+            }
+            else if (slope == -1) {
+                System.out.println("The equation of the line between these points is: y = -x + " + yint);
+            } else {
+                System.out.println("The equation of the line between these points is: y = " + slope + "x + " + yint);
+            }
+        } else {
+            System.out.println("The equation of the line between these points is: y = " + slopen + "/" + sloped
+                    + "x + " + yint);
+        }
         System.out.println("The slope of this line is: " + slope);
         System.out.println("The y-intercept of this line is: " + yint);
         System.out.println("The distance between the two points is: " + distance);
+        System.out.println();
 
 
+    }
+
+    public void linePlugIn(double userx) {
+        int slopen = y2 - y1;
+        int sloped = x2 - x1;
+        double slope = (double) slopen/sloped;
+        double yint = y1 - ((slope)*x1);
+        double yVal = ((userx*slope) + yint);
+        System.out.println();
+        System.out.print("The point on the line is: (" + userx + ", " + yVal + ")");
     }
 }
