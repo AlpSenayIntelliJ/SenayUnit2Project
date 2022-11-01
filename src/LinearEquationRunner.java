@@ -12,7 +12,17 @@ public class LinearEquationRunner {
         int coord2x = Integer.parseInt(coord2.substring(1, coord2.indexOf(",")));
         int coord2y = Integer.parseInt(coord2.substring(coord2.indexOf(", ")+2,coord2.indexOf(")")));
 
-        LinearEquation equation = new LinearEquation();
+        if (coord1x == coord2x) {
+            System.out.println();
+            System.out.println("Oh! You have entered coordinates that result in a vertical line. The equation for this vertical line is: x = " + coord1x);
+            System.exit(0);
+        }
+
+        LinearEquation equation = new LinearEquation(coord1x, coord1y, coord2x, coord2y);
         equation.lineInfo();
+
+        System.out.print("Enter a value for x: ");
+        double userx = scan.nextDouble();
+        equation.linePlugIn(userx);
     }
 }
