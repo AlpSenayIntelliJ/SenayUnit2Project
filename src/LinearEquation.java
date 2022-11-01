@@ -1,5 +1,6 @@
 public class LinearEquation {
-    private int x1, x2, y1, y2;
+    private int x1, y1, x2, y2;
+    public LinearEquation() {}
     public void lineInfo() {
         int slopen = y2 - y1;
         int sloped = x2 - x1;
