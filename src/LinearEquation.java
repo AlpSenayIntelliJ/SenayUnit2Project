@@ -16,16 +16,54 @@ public class LinearEquation {
         System.out.println("The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")");
         if (((int) (slope)) == slope) {
             if (slope == 1) {
-                System.out.println("The equation of the line between these points is: y = x + " + yint);
+                if (yint < 0) {
+                    
+                }
+                if (yint == 0) {
+                    System.out.println("The equation of the line between these points is: y = x");
+                } else {
+                    System.out.println("The equation of the line between these points is: y = x + " + yint);
+                }
             }
             else if (slope == -1) {
-                System.out.println("The equation of the line between these points is: y = -x + " + yint);
+                if (yint == 0) {
+                    System.out.println("The equation of the line between these points is: y = -x");
+                } else {
+                    System.out.println("The equation of the line between these points is: y = -x + " + yint);
+                }
             } else {
-                System.out.println("The equation of the line between these points is: y = " + slope + "x + " + yint);
+                if (yint == 0) {
+                    if (slope < 0) {
+                        System.out.println("The equation of the line between these points is: y = -" + slope + "x");
+                    } else {
+                        System.out.println("The equation of the line between these points is: y = " + slope + "x");
+                    }
+                } else {
+                    if (slope < 0) {
+                        System.out.println("The equation of the line between these points is: y = -" + slope + "x + " + yint);
+                    } else {
+                        System.out.println("The equation of the line between these points is: y = " + slope + "x + " + yint);
+                    }
+                }
             }
         } else {
-            System.out.println("The equation of the line between these points is: y = " + slopen + "/" + sloped
-                    + "x + " + yint);
+            if (yint == 0) {
+                if (slope < 0) {
+                    System.out.println("The equation of the line between these points is: y = -" + Math.abs(slopen) + "/" + Math.abs(sloped)
+                            + "x");
+                } else {
+                    System.out.println("The equation of the line between these points is: y = " + Math.abs(slopen) + "/" + Math.abs(sloped)
+                            + "x");
+                }
+            } else {
+                if (slope < 0) {
+                    System.out.println("The equation of the line between these points is: y = -" + Math.abs(slopen) + "/" + Math.abs(sloped)
+                            + "x + " + yint);
+                } else {
+                    System.out.println("The equation of the line between these points is: y = " + Math.abs(slopen) + "/" + Math.abs(sloped)
+                            + "x + " + yint);
+                }
+            }
         }
         System.out.println("The slope of this line is: " + slope);
         System.out.println("The y-intercept of this line is: " + yint);
