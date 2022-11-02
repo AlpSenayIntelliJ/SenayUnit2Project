@@ -6,6 +6,10 @@ public class LinearEquation {
         this.x2 = x2;
         this.y2 = y2;
     }
+
+    public double roundedToHundredth(double x) {
+        return Math.round(x*100)/100.0;
+    }
     public void lineInfo() {
         int slopen = y2 - y1;
         int sloped = x2 - x1;
@@ -17,57 +21,94 @@ public class LinearEquation {
         if (((int) (slope)) == slope) {
             if (slope == 1) {
                 if (yint < 0) {
-                    
+                    System.out.println("The equation of the line between these points is: y = x - " + roundedToHundredth(yint));
                 }
-                if (yint == 0) {
+                else if (yint == 0) {
                     System.out.println("The equation of the line between these points is: y = x");
                 } else {
-                    System.out.println("The equation of the line between these points is: y = x + " + yint);
+                    System.out.println("The equation of the line between these points is: y = x + " + roundedToHundredth(yint));
                 }
             }
             else if (slope == -1) {
-                if (yint == 0) {
+                if (yint < 0) {
+                    System.out.println("The equation of the line between these points is: y = -x - " + roundedToHundredth(yint));
+                }
+                else if (yint == 0) {
                     System.out.println("The equation of the line between these points is: y = -x");
                 } else {
-                    System.out.println("The equation of the line between these points is: y = -x + " + yint);
+                    System.out.println("The equation of the line between these points is: y = -x + " + roundedToHundredth(yint));
                 }
             } else {
-                if (yint == 0) {
-                    if (slope < 0) {
-                        System.out.println("The equation of the line between these points is: y = -" + slope + "x");
+                if (yint < 0) {
+                    if (slope == 0) {
+                        System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(yint));
+                    }
+                    else if (slope < 0) {
+                        System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(slope) + "x - " + roundedToHundredth(yint));
                     } else {
-                        System.out.println("The equation of the line between these points is: y = " + slope + "x");
+                        System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(slope) + "x - " + roundedToHundredth(yint));
+                    }
+                }
+                else if (yint == 0) {
+                    if (slope == 0) {
+                        System.out.println("The equation of the line between these points is: y = 0");
+                    }
+                    else if (slope < 0) {
+                        System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(slope) + "x");
+                    } else {
+                        System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(slope) + "x");
                     }
                 } else {
-                    if (slope < 0) {
-                        System.out.println("The equation of the line between these points is: y = -" + slope + "x + " + yint);
+                    if (slope == 0) {
+                        System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(yint));
+                    }
+                    else if (slope < 0) {
+                        System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(slope) + "x + " + roundedToHundredth(yint));
                     } else {
-                        System.out.println("The equation of the line between these points is: y = " + slope + "x + " + yint);
+                        System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(slope) + "x + " + roundedToHundredth(yint));
                     }
                 }
             }
         } else {
-            if (yint == 0) {
-                if (slope < 0) {
-                    System.out.println("The equation of the line between these points is: y = -" + Math.abs(slopen) + "/" + Math.abs(sloped)
+            if (yint < 0) {
+                if (slope == 0) {
+                    System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(yint));
+                }
+                else if (slope < 0) {
+                    System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(Math.abs(slopen)) + "/" + roundedToHundredth(Math.abs(sloped))
+                            + "x - " + roundedToHundredth(yint));
+                } else {
+                    System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(Math.abs(slopen)) + "/" + roundedToHundredth(Math.abs(sloped))
+                            + "x - " + roundedToHundredth(yint));
+                }
+            }
+            else if (yint == 0) {
+                if (slope == 0) {
+                    System.out.println("The equation of the line between these points is: y = 0");
+                }
+                else if (slope < 0) {
+                    System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(Math.abs(slopen)) + "/" + roundedToHundredth(Math.abs(sloped))
                             + "x");
                 } else {
-                    System.out.println("The equation of the line between these points is: y = " + Math.abs(slopen) + "/" + Math.abs(sloped)
+                    System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(Math.abs(slopen)) + "/" + roundedToHundredth(Math.abs(sloped))
                             + "x");
                 }
             } else {
-                if (slope < 0) {
-                    System.out.println("The equation of the line between these points is: y = -" + Math.abs(slopen) + "/" + Math.abs(sloped)
-                            + "x + " + yint);
+                if (slope == 0) {
+                    System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(yint));
+                }
+                else if (slope < 0) {
+                    System.out.println("The equation of the line between these points is: y = -" + roundedToHundredth(Math.abs(slopen)) + "/" + roundedToHundredth(Math.abs(sloped))
+                            + "x + " + roundedToHundredth(yint));
                 } else {
-                    System.out.println("The equation of the line between these points is: y = " + Math.abs(slopen) + "/" + Math.abs(sloped)
-                            + "x + " + yint);
+                    System.out.println("The equation of the line between these points is: y = " + roundedToHundredth(Math.abs(slopen)) + "/" + roundedToHundredth(Math.abs(sloped))
+                            + "x + " + roundedToHundredth(yint));
                 }
             }
         }
-        System.out.println("The slope of this line is: " + slope);
-        System.out.println("The y-intercept of this line is: " + yint);
-        System.out.println("The distance between the two points is: " + distance);
+        System.out.println("The slope of this line is: " + roundedToHundredth(slope));
+        System.out.println("The y-intercept of this line is: " + roundedToHundredth(yint));
+        System.out.println("The distance between the two points is: " + roundedToHundredth(distance));
         System.out.println();
 
 
@@ -80,6 +121,6 @@ public class LinearEquation {
         double yint = y1 - ((slope)*x1);
         double yVal = ((userx*slope) + yint);
         System.out.println();
-        System.out.print("The point on the line is: (" + userx + ", " + yVal + ")");
+        System.out.print("The point on the line is: (" + roundedToHundredth(userx) + ", " + roundedToHundredth(yVal) + ")");
     }
 }
